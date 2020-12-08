@@ -23,4 +23,9 @@ public class HelloWorldController {
         return "hello world2";
     }
 
+    @GetMapping("/firstwin")
+    public String firstwin() {
+        return "hello world3";
+    }
+
 }
