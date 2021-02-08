@@ -1,1 +1,35 @@
+spring:
+  profiles:
+    active: dev
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 20
+      max-lifetime: 1800000
+      idle-timeout: 600000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+      auto-commit: true
+      pool-name: DataSoureHikariCP
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+  jackson:
+    serialization:
+      write-dates-as-timestamps: true
 
+firstwin:
+  order-out-date-limit: 3600
+  order-buy-number: 99
+  order-single-number: 5
+  base-url-package: com.nowavesnokings.firstwin.api
+  default-scope: 8
+  wechat:
+    appid: wxc49f3615528950fa
+    app-secret: bfbc5d6b4cf1aec07ac70d9952556957
+    code2session: https://api.weixin.qq.com/sns/jscode2session?appid={0}&secret={1}&js_code={2}&grant_type=authorization_code
+  jwt:
+    secret: wearenowavesnokings666
+    expired-time: 86400000
+    token-prefix: Bearer

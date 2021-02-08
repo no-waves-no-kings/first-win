@@ -1,0 +1,29 @@
+server:
+  port: 8090
+
+spring:
+  datasource:
+    url: jdbc:mysql://122.51.167.40:3308/firstwin?useUnicode=true&characterEncoding=utf8&useSSL=false&allowMultiQueries=true&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+  jpa:
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+#        show_sql: true
+        format_sql: true
+
+springfox:
+  documentation:
+    swagger-ui:
+      enabled: false
+logging:
+ level:
+    org:
+      hibernate:
+        SQL: debug
+        type:
+         descriptor:
+          sql: TRACE
